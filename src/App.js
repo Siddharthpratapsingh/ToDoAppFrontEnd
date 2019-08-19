@@ -51,7 +51,7 @@ class App extends Component {
     
 
     console.log(this.state)
-    axios.post("http://todo-app2.cfapps.io/data/todo/", this.state)
+    axios.post("https://todo-app2.cfapps.io/data/todo/", this.state)
       .then(response => {
         console.log(response)
 
@@ -62,7 +62,7 @@ class App extends Component {
 
   }
   update=(id)=>{
-    axios.put('http://todo-app2.cfapps.io/data/todo/'+id,{taskTitle:this.state.newTaskTitle})
+    axios.put('https://todo-app2.cfapps.io/data/todo/'+id,{taskTitle:this.state.newTaskTitle})
     .then(response => {
       console.log(response)
 
@@ -75,7 +75,7 @@ class App extends Component {
   deleteFunction = (id) => {
     const { result1 } = this.state
 
-    axios.delete('http://todo-app2.cfapps.io/data/todos/' + id).then(result => {
+    axios.delete('https://todo-app2.cfapps.io/data/todos/' + id).then(result => {
       this.setState({
         result1: result1.filter(product => product.id !== id)
 
